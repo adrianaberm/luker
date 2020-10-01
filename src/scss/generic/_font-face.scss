@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    #font-family
+\*------------------------------------*/
+
+$font-size-base: 16px;
+
+body {
+  color: $c-text;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+
+  p {
+    strong {
+      font-weight: 700;
+    }
+  }
+}
