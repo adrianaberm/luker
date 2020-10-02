@@ -4,7 +4,38 @@ main {
 }
 
 .header {
+    position: relative;
     text-align: center;
+
+    &:before {
+        content: "";
+        height: 600px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        background: url(../images/heart-bg2.png) top no-repeat;
+        transform: scale(1);
+        animation: pulse 12s infinite;
+    }
+
+
+    &:after {
+        content: "";
+        height: 600px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        background: url(../images/heart-bg1.png) top no-repeat;
+        transform: scale(1);
+        animation: pulse 2s infinite;
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 2;
+    }
 
     h1 {
         position: relative;
@@ -29,7 +60,7 @@ main {
 
 .steps {
     background: url(../images/steps-path.png) repeat-y;
-    background-position: center 50px;
+    background-position: right top;
     width: 95%;
     max-width: 1200px;
     margin: 30px auto;
@@ -41,7 +72,7 @@ main {
 
     &__pic {
         max-width: 90%;
-        --animate-duration: 12s;
+       
     }
 
     &__number {
@@ -66,9 +97,49 @@ main {
     }
 }
 
+.step {
+    &One{
+        .steps__pic {
+            --animate-duration: 16s;
+        }
+    }
+
+    &Two{
+        .steps__pic {
+            --animate-duration: 22s;
+        }
+    }
+
+    &Three{
+        .steps__pic {
+            --animate-duration: 18s;
+        }
+    }
+    &Four{
+        .steps__pic {
+            --animate-duration: 25s;
+        }
+    }
+    &Five{
+        .steps__pic {
+            --animate-duration: 30s;
+        }
+    }
+    &Six{
+        .steps__pic {
+            --animate-duration: 22s;
+        }
+    }
+    &Seven{
+        .steps__pic {
+            --animate-duration: 18s;
+        }
+    }
+}
+
 .heart {
     background: url(../images/footer.png) no-repeat center top;
-    padding: 120px 20px 30px;
+    padding: 120px 20px 80px;
     text-align: center;
 
     &__title {
@@ -81,27 +152,51 @@ main {
     }
 
     &__text {
-        margin-top: 50px;
+        margin-top: 30px;
         img {
             max-width: 100%;
         }
     }
 
     &__logo {
-        margin-top: 50px;
+        margin-top: 30px;
         img {
             max-width: 100%;
         }
     }
 }
 
+footer {
+    background: url(../images/footer-bg.png) bottom center no-repeat;
+    
+}
+
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(01);
+        opacity: 0.5;
+        
+    }
+
+    70% {
+        transform: scale(1.01);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+       
+    }
+}
 
 
 @include media-query(medium) {
 
     .steps {
-        background: url(../images/steps-path.png) no-repeat;
-        background-position: center 50px;
+       
 
         &__text {
             position: absolute;
@@ -248,23 +343,44 @@ main {
 
 }
 
-footer {
-    background: url(../images/footer-bg.png) bottom center no-repeat;
-    
-}
 
-@include media-query(wide) {
+
+
+
+@include media-query(large) {
   
     .steps {
-
+        background: url(../images/steps-path.png) no-repeat;
+        background-position: center 100px;
         .stepOne {
            
             left: 50px;
         }
         .stepTwo {
-          
             right: 50px;
             margin-top: -300px;
+        }
+
+        .stepThree {
+            right: 50px;
+            margin-top: -200px;
+        }
+
+        .stepFour {
+            margin-top: -300px;
+        }
+
+        .stepFive {
+            margin-top: -250px;
+        }
+
+        .stepSix {
+            margin-top: -320px;
+        }
+
+        .stepSeven {
+          
+            margin-bottom: -100px;
         }
 
     }
